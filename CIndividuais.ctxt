@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=CIndividuais
+comment1.params=
+comment1.target=CIndividuais()
+comment1.text=\r\n\ COnstrutor\ para\ objetos\ da\ classe\ CIndividuais\r\n
+comment10.params=coefFiscal
+comment10.target=void\ setCoefFiscal(double)
+comment11.params=ativEconomicas
+comment11.target=void\ setAtivEconomicas(int[])
+comment2.params=new_dependentes\ new_NIFdependentes\ new_coefFiscal\ new_ativEcon
+comment2.target=CIndividuais(int,\ int[],\ double,\ int[])
+comment3.params=novoContribuinte
+comment3.target=CIndividuais(CIndividuais)
+comment4.params=
+comment4.target=int\ getDepen()
+comment5.params=
+comment5.target=int[]\ getNIFdepen()
+comment6.params=
+comment6.target=double\ getCoef()
+comment7.params=
+comment7.target=int[]\ getAtiv()
+comment8.params=dependentes
+comment8.target=void\ setDepen(int)
+comment9.params=NIFdependentes
+comment9.target=void\ setNIFdepen(int[])
+numComments=12

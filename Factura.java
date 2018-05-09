@@ -1,0 +1,93 @@
+import java.time.LocalDate;
+/**
+ * Escreva a descrição da classe Factura aqui.
+ * 
+ * @author (seu nome) 
+ * @version (número de versão ou data)
+ */
+public class Factura
+{
+    private int NIFEmitente;
+    private String designacao;
+    private LocalDate data;
+    private int NIFCliente;
+    private String descricao;
+    private double valorDespesa;
+    
+    public Factura()
+    {
+        this.NIFEmitente = 0;
+        this.designacao = null;
+        this.data = LocalDate.now();
+        this.NIFCliente = 0;
+        this.descricao = null;
+        this.valorDespesa = 0;
+    }
+
+    public Factura(int NIFEmitente, String designacao, LocalDate data, int NIFCliente,
+    String descricao, double valorDespesa){
+        this.NIFEmitente = NIFEmitente;
+        this.designacao = designacao;
+        this.data = data;
+        this.NIFCliente = NIFCliente;
+        this.descricao = descricao;
+        this.valorDespesa = valorDespesa;
+    }
+    
+    public Factura(Factura umaFactura){
+        this.NIFEmitente = umaFactura.getNIFEmitente();
+        this.designacao = umaFactura.getDesignacao();
+        this.data = umaFactura.getData();
+        this.NIFCliente = umaFactura.getNIFCliente();
+        this.descricao = umaFactura.getDescricao();
+        this.valorDespesa = umaFactura.getDespesa();
+    }
+    
+    public int getNIFEmitente(){
+        return this.NIFEmitente;
+    }
+    
+    public String getDesignacao(){
+        return this.designacao;
+    }
+    
+    public LocalDate getData(){
+        return this.data;
+    }
+    
+    public int getNIFCliente(){
+        return this.NIFCliente;
+    }
+    
+    public String getDescricao(){
+        return this.descricao;
+    }
+    
+    public double getDespesa(){
+        return this.valorDespesa;
+    }
+    
+    public void setNIFE(int NIFEmitente){
+        this.NIFEmitente = NIFEmitente;
+    }
+    
+    public void setDesignacao(String designacao){
+        this.designacao = designacao;
+    }
+    
+    public void setData(LocalDate data){
+        this.data = data;
+    }
+    
+    public void setNIFC(int NIFCliente){
+        this.NIFCliente = NIFCliente;
+    }
+    
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
+    
+    public void setDespesa(double despesa){
+        this.valorDespesa = despesa;
+    }
+}
