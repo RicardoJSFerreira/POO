@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.*;
 /**
  * Escreva a descrição da classe Contribuintes aqui.
  * 
@@ -25,14 +26,17 @@ public class Contribuintes
         this.nome=null;
         this.morada=null;
         this.password=0;
+        this.faturas=new ArrayList<>();
     }
     
-    public Contribuintes(int new_NIF, String new_mail, String new_nome, String new_morada, int new_pass){
+    public Contribuintes(int new_NIF, String new_mail, String new_nome, String new_morada, int new_pass
+    , ArrayList<Factura> l){
         this.NIF=new_NIF;
         this.email=new_mail;
         this.nome=new_nome;
         this.morada=new_morada;
         this.password=new_pass;
+        setFaturas(l);
     }
     
     public Contribuintes(Contribuintes novoContribuinte){
@@ -41,6 +45,7 @@ public class Contribuintes
         this.nome=novoContribuinte.getNome();
         this.morada=novoContribuinte.getMorada();
         this.password=novoContribuinte.getPassword();
+        this.faturas=novoContribuinte.getFaturas();
     }
     
         public int getNIF(){
@@ -63,6 +68,14 @@ public class Contribuintes
         return this.password;
     }
     
+    public ArrayList<Factura> getFaturas(){
+        ArrayList<Factura>res= new ArrayList<>(faturas.size());
+        for(Factura x : faturas){
+            res.add(x.clone());
+        }
+        return res;
+    }
+    
     public void setNIF(int NIF){
         this.NIF=NIF;
     }
@@ -81,6 +94,15 @@ public class Contribuintes
     
     public void setPassword (int password){
         this.password=password;
+    }
+    
+    public void setFaturas(ArrayList<Factura> new_faturas){
+        faturas=new ArrayList<>(new_faturas.size());
+        
+        for(Iterator<Factura>it=new_faturas.iterator(); it.hasNext();){
+            Factura f = it.next();
+            faturas.add(f.clone());
+        }
     }
     
     public Contribuintes clone(){

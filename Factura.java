@@ -91,4 +91,8 @@ public class Factura
     public void setDespesa(double despesa){
         this.valorDespesa = despesa;
     }
+    
+    public Factura clone(){
+        return new Factura(this);
+    }
 }
