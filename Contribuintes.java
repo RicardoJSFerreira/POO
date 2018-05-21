@@ -13,7 +13,8 @@ public class Contribuintes
     private String nome;
     private String morada;
     private int password;
-
+    
+    private ArrayList<Factura> faturas;
     /**
      * COnstrutor para objetos da classe Contribuintes
      */
@@ -80,6 +81,11 @@ public class Contribuintes
     
     public void setPassword (int password){
         this.password=password;
+    }
+    
+    public Contribuintes clone(){
+        Contribuintes novo = new Contribuintes(this);
+        return novo;
     }
     
 }

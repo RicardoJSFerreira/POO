@@ -11,6 +11,7 @@ public class Factura
     private String designacao;
     private LocalDate data;
     private int NIFCliente;
+    private TipoFactura fat;
     private String descricao;
     private double valorDespesa;
     
