@@ -13,30 +13,11 @@ public class Comunicador
         //ler
         Scanner ler = new Scanner(System.in);
         int c = ler.nextInt();
-        int contribuinte;
-        String passWord;
-        
         
         if(c==1){
-            System.out.println("Insira o seu número de contribuinte");
-            contribuinte= ler.nextInt();
-            System.out.println("Insira a Password");
-            passWord = ler.nextLine();
-            if(verifica_login(contribuinte,passWord)==True){ //contribuintes
-                //adicionar faturas
-                //consultar faturas
-                //consultar deduzido
-                //consultar faturas "outros" e definir o seu tipo
-            }
-            else{
-                System.out.println("Login incorreto");
-            }
+            System.out.println("Ta tudo? ");
         }
-        if(c==2){
+        
         System.out.println("Acabou");
-    }
-        else{
-        System.out.println("Inseriu um numero errado");
-        }
     }
 }

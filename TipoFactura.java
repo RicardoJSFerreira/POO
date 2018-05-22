@@ -1,32 +1,36 @@
 
 /**
- * Escreva a descrição da classe TipoFactura aqui.
+ * Enumeration class TipoFactura - write a description of the enum class here
  * 
- * @author (seu nome) 
- * @version (número de versão ou data)
+ * @author (your name here)
+ * @version (version number or date here)
  */
-public class TipoFactura
-{
-    private int x;
-
-    /**
-     * COnstrutor para objetos da classe TipoFactura
-     */
-    public TipoFactura()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+public enum TipoFactura
+{    
+    DESPESASGERAIS  (0.35,250.0),
+    SAUDE   (0.15,1000.0),
+    EDUCACAO(0.3,800.0),
+    HABITACAO(0.15,296.0),
+    LARES(0.25,403.75),
+    REPARACAOAUTOMOVEIS(0.0,0.0),
+    REPARACAOMOTOCICLOS(0.0,0.0),
+    RESTAURACAOEALOJAMENTO(0.0,0.0),
+    CABELEIREIROS(0.0,0.0),
+    ATIVIDADESVETERINARIAS(0.0,0.0),
+    PASSESMENSAIS(0.0,0.0);
+    
+    private final double deducao;
+    private final double valormaximo;
+    
+    TipoFactura(double deducao, double valormaximo) {
+        this.deducao = deducao;
+        this.valormaximo = valormaximo;
     }
-
-    /**
-     * Exemplo de método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   exemplo de um parâmetro de método
-     * @return     a soma de x com y 
-     */
-    public int sampleMethod(int y)
-    {
-        // ponha seu código aqui
-        return x + y;
+    
+    public double getDeducao(){
+        return this.deducao;
+    }
+    public double getValormaximo(){
+        return this.valormaximo;
     }
 }

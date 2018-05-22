@@ -26,11 +26,12 @@ public class Factura
     }
 
     public Factura(int NIFEmitente, String designacao, LocalDate data, int NIFCliente,
-    String descricao, double valorDespesa){
+    TipoFactura fat, String descricao, double valorDespesa){
         this.NIFEmitente = NIFEmitente;
         this.designacao = designacao;
         this.data = data;
         this.NIFCliente = NIFCliente;
+        this.fat = fat;
         this.descricao = descricao;
         this.valorDespesa = valorDespesa;
     }
@@ -94,5 +95,9 @@ public class Factura
     
     public Factura clone(){
         return new Factura(this);
+    }
+    
+    public double retornaDedutivel(Factura f){
+        return (f.getDespesa()*fat.getDeducao());
     }
 }

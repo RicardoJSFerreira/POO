@@ -2,7 +2,8 @@
 public class CEmpresas extends Contribuintes
 {
     private String[] ativEconomicas;
-    private int[] deduções;
+    private double deducoes;
+    private Concelho concelho;
 
     /**
      * COnstrutor para objetos da classe CEmpresas
@@ -10,33 +11,44 @@ public class CEmpresas extends Contribuintes
     public CEmpresas()
     {
         this.ativEconomicas=null;
-        this.deduções=null;
+        this.deducoes=0.0;
     }
 
-    public CEmpresas(int new_NIF, String new_mail, String new_nome, String new_morada, int new_pass,
-     String[] new_ativEcon, int[] new_deduções){
+    public CEmpresas(int NIF, String Email, String nome, String morada, int password,
+    String[] new_ativEcon, double new_deducoes){
+        this.NIF=NIF;
+        this.email=Email;
+        this.nome=nome;
+        this.morada=morada;
+        this.password=password;
         this.ativEconomicas=new_ativEcon;
-        this.deduções=new_deduções;
+        this.deducoes=new_deducoes;
     }
     
     public CEmpresas(CEmpresas novoContribuinte){
         this.ativEconomicas=novoContribuinte.getAtiv();
-        this.deduções=novoContribuinte.getDeduc();
+        this.deducoes=novoContribuinte.getDeduc();
     }
     
     public String[] getAtiv(){
         return this.ativEconomicas;
     }
     
-    public int[] getDeduc(){
-        return this.deduções;
+    public double getDeduc(){
+        return this.deducoes;
     }
     
     public void setAtivEconomicas (String[] ativEconomicas){
         this.ativEconomicas=ativEconomicas;
     }
     
-    public void setDeduções (int[] deduções){
-        this.deduções=deduções;
+    public void setDeduções (double deducoes){
+        this.deducoes=deducoes;
+    }
+    
+    public void setFaturasEmp(Factura f){
+        if(f.getNIFEmitente()==this.NIF){
+            faturas.add(f.clone());
+        }
     }
 }

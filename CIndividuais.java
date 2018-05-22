@@ -17,7 +17,13 @@ public class CIndividuais extends Contribuintes
         this.ativEconomicas=null;
     }
     
-    public CIndividuais(int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
+    public CIndividuais(int NIF, String Email, String nome, String morada, int password,
+    int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
+        this.NIF=NIF;
+        this.email=Email;
+        this.nome=nome;
+        this.morada=morada;
+        this.password=password;
         this.dependentes=new_dependentes;
         this.NIFdependentes=new_NIFdependentes;
         this.coefFiscal=new_coefFiscal;
@@ -61,5 +67,11 @@ public class CIndividuais extends Contribuintes
     
     public void setAtivEconomicas (int[] ativEconomicas){
         this.ativEconomicas=ativEconomicas;
+    }
+    
+    public void setFaturasInd(Factura f){
+        if(f.getNIFCliente()==this.NIF){
+            faturas.add(f.clone());
+        }
     }
 }
