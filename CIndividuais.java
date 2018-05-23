@@ -69,6 +69,18 @@ public class CIndividuais extends Contribuintes
         this.ativEconomicas=ativEconomicas;
     }
     
+    public boolean equals (CIndividuais ci){
+        return (this.dependentes==ci.getDepen() && this.NIFdependentes==ci.getNIFdepen() && 
+        this.coefFiscal==ci.getCoef() && this.ativEconomicas == ci.getAtiv());
+    }
+    
+    public String toString(){
+        return ("Número de dependentes :" + this.dependentes + " Número de contribuinte do dependente:" + this.NIFdependentes + 
+        "Coeficiente fiscal :" + this.coefFiscal + "Atividades económicas : " + this.ativEconomicas);
+       
+    }
+
+    
     public void setFaturasInd(Factura f){
         if(f.getNIFCliente()==this.NIF){
             faturas.add(f.clone());

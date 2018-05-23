@@ -46,6 +46,14 @@ public class CEmpresas extends Contribuintes
         this.deducoes=deducoes;
     }
     
+    public boolean equals (CEmpresas ce){
+        return (this.ativEconomicas == ce.getAtiv() && this.deducoes==ce.getDeduc());
+    }
+    
+    public String toString(){
+        return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
+    }
+    
     public void setFaturasEmp(Factura f){
         if(f.getNIFEmitente()==this.NIF){
             faturas.add(f.clone());

@@ -39,6 +39,17 @@ public abstract class Contribuintes
     public int getPassword(){
         return this.password;
     }
+    public boolean equals (Contribuintes con){
+        return (this.NIF==con.getNIF() && this.email==con.getEmail() && this.nome==con.getNome () 
+        && this.morada ==con.getMorada() && this.password==con.getPassword());
+        
+    }
+    
+    public String toString(){
+        return ("Número de contribuinte :"+this.NIF + "Email:" + this.email+ "Nome:"+this.nome+ 
+        "Morada fiscal :"+ this.morada + "Password :" + this.password);
+        
+    }
     
     public ArrayList<Factura> getFaturas(){
         ArrayList<Factura>res= new ArrayList<>(faturas.size());
