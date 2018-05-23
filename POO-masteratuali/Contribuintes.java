@@ -13,7 +13,7 @@ public abstract class Contribuintes
     protected String email;
     protected String nome;
     protected String morada;
-    protected String password;
+    protected int password;
     
     protected ArrayList<Factura> faturas;
     /**
@@ -36,10 +36,9 @@ public abstract class Contribuintes
         return this.morada;
     }
     
-    public String getPassword(){
+    public int getPassword(){
         return this.password;
     }
-    
     public boolean equals (Contribuintes con){
         return (this.NIF==con.getNIF() && this.email==con.getEmail() && this.nome==con.getNome () 
         && this.morada ==con.getMorada() && this.password==con.getPassword());
