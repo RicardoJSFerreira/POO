@@ -89,12 +89,21 @@ public class Factura
         this.descricao = descricao;
     }
     
-    public void setTipoFactura(TipoFactura f){
-        this.fat = f;
-    }
-    
     public void setDespesa(double despesa){
         this.valorDespesa = despesa;
+    }
+    
+    public boolean equals (Factura f){
+        return(this.NIFEmitente==f.getNIFEmitente() && this.designacao==f.getDesignacao() && this.data==f.getData() && 
+        this.NIFCliente==f.getNIFCliente() && this.descricao==f.getDescricao() && this.valorDespesa==f.getDespesa());
+    
+    }
+    
+    public String toString(){
+        return("Número de contribuinte Emitente:" +this.NIFEmitente + "Designação:" +this.designacao + "Data de emissão da fatura:"+
+        this.data+ "Número de contribuinte cliente:" + this.NIFCliente + "Descrição :" + this.descricao + "Valor da despesa:"
+        +this.valorDespesa);
+        
     }
     
     public Factura clone(){
@@ -103,12 +112,5 @@ public class Factura
     
     public double retornaDedutivel(Factura f){
         return (f.getDespesa()*fat.getDeducao());
-    }
-    
-    public boolean podeAdicionar(double x, Factura f){
-        if(x+f.retornaDedutivel(f)>=f.fat.getValormaximo()){
-            return false;
-        }
-        return true;
     }
 }

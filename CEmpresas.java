@@ -14,7 +14,7 @@ public class CEmpresas extends Contribuintes
         this.deducoes=0.0;
     }
 
-    public CEmpresas(int NIF, String Email, String nome, String morada, String password,
+    public CEmpresas(int NIF, String Email, String nome, String morada, int password,
     String[] new_ativEcon, double new_deducoes){
         this.NIF=NIF;
         this.email=Email;
@@ -44,6 +44,14 @@ public class CEmpresas extends Contribuintes
     
     public void setDeduções (double deducoes){
         this.deducoes=deducoes;
+    }
+    
+    public boolean equals (CEmpresas ce){
+        return (this.ativEconomicas == ce.getAtiv() && this.deducoes==ce.getDeduc());
+    }
+    
+    public String toString(){
+        return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
     }
     
     public void setFaturasEmp(Factura f){
