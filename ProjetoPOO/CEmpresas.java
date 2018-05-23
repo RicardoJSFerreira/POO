@@ -14,7 +14,7 @@ public class CEmpresas extends Contribuintes
         this.deducoes=0.0;
     }
 
-    public CEmpresas(int NIF, String Email, String nome, String morada, int password,
+    public CEmpresas(int NIF, String Email, String nome, String morada, String password,
     String[] new_ativEcon, double new_deducoes){
         this.NIF=NIF;
         this.email=Email;
