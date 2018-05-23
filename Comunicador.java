@@ -9,34 +9,23 @@ public class Comunicador
 {
     public static void main (String[] args) {
         BaseDeDados b = new BaseDeDados();
-        System.out.println("Pretende fazer Login(1) ou Registo(2)? ");
+        System.out.println("Pretende fazer Login(1),Registo(2) ou Sair(3)? ");
         //ler
         Scanner ler = new Scanner(System.in);
         int c = ler.nextInt();
-        int contribuinte;
-        String passWord;
-        
         
         if(c==1){
-            System.out.println("Insira o seu número de contribuinte");
-            contribuinte= ler.nextInt();
-            System.out.println("Insira a Password");
-            passWord = ler.nextLine();
-            if(verifica_login(contribuinte,passWord)==True){ //contribuintes
-                //adicionar faturas
-                //consultar faturas
-                //consultar deduzido
-                //consultar faturas "outros" e definir o seu tipo
-            }
-            else{
-                System.out.println("Login incorreto");
-            }
+           Login l = new Login();
+          
         }
         if(c==2){
-        System.out.println("Acabou");
-    }
-        else{
-        System.out.println("Inseriu um numero errado");
+           Registo l = new Registo();
+
         }
+        else{
+           System.exit(0);
+        }
+
+
     }
 }
