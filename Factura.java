@@ -89,6 +89,10 @@ public class Factura
         this.descricao = descricao;
     }
     
+    public void setTipoFactura(TipoFactura f){
+        this.fat = f;
+    }
+    
     public void setDespesa(double despesa){
         this.valorDespesa = despesa;
     }
@@ -112,5 +116,12 @@ public class Factura
     
     public double retornaDedutivel(Factura f){
         return (f.getDespesa()*fat.getDeducao());
+    }
+    
+    public boolean podeAdicionar(double x, Factura f){
+        if(x+f.retornaDedutivel(f)>=f.fat.getValormaximo()){
+            return false;
+        }
+        return true;
     }
 }

@@ -27,21 +27,51 @@ private static HashMap<Integer,CIndividuais> contribuintesI;
 private static HashMap<Integer,CEmpresas> contribuintesE;
     
 
-public void addContribuinteIndividual(int NIF, String Email, String nome, String morada, int password,
-int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
+public void addContribuinteIndividual(int NIF, String Email, String nome, String morada, String password,
+int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon,
+double deducfiscal){
     CIndividuais newCI = new CIndividuais(NIF,Email,nome,morada,password,new_dependentes
-    ,new_NIFdependentes,new_coefFiscal,new_ativEcon);
+    ,new_NIFdependentes,new_coefFiscal,new_ativEcon,deducfiscal);
     
     contribuintesI.put(NIF,newCI);
 }
 
-public void addContribuinteEmpresa(int NIF, String Email, String nome, String morada, int password,
+public void addContribuinteEmpresa(int NIF, String Email, String nome, String morada, String password,
 String[] new_ativEcon, double new_deducoes){
      CEmpresas newCE = new CEmpresas(NIF,Email,nome,morada,password,new_ativEcon
      ,new_deducoes);
      
      contribuintesE.put(NIF,newCE);
     }
+    
+public int verifica_login(int NIF, String password){
+    
+    if(contribuintesI.get(NIF) != null && contribuintesI.get(NIF).getPassword().equals(password)) {
+        return 1;
+    }
+    
+    if(contribuintesE.get(NIF) != null && contribuintesE.get(NIF).getPassword().equals(password)) {
+        return 2;
+    }
+    return 0;
+}
+
+public String infoContribuinteI(CIndividuais c){
+    ArrayList<Factura> f = new ArrayList<Factura>();
+    
+    for(Factura f1 : c.getFaturas()){
+        f.add(f1);
+    }
+    
+    ArrayList<String> result = new ArrayList<String>();
+    
+    for(int i=0; i<f.size(); i++){
+        result.add(f.get(i).getDesignacao());
+    }
+    
+    String escreve = "Faturas : " + result.toString() + "Deduzido : " + c.getDeducFiscal();
+    return escreve;
+}
 
 public String listaFacturasPorValor(CEmpresas c){
     ArrayList<Factura> f = new ArrayList<Factura>();
