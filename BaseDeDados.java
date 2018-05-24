@@ -19,7 +19,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-
+import java.util.Scanner;
 public class BaseDeDados
 {
 
@@ -95,5 +95,22 @@ public String listaFacturasPorValor(CEmpresas c){
     String escreve = result.toString();
     return escreve;
 }
+    public static void main (String[] args){
+        System.out.println("Pretende fazer Login(1),Registo(2) ou Sair(3)? ");
+        //ler
+        Scanner ler = new Scanner(System.in);
+        int c = ler.nextInt();
+        
+        if(c==1){
+           Login l = new Login();
+          
+        }
+        if(c==2){
+           Registo l = new Registo();
 
+        }
+        else{
+           System.exit(0);
+        }
+    }
 }

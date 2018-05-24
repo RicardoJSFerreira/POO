@@ -12,4 +12,6 @@ comment5.params=c
 comment5.target=java.lang.String\ listaFacturasPorValor(CEmpresas)
 comment6.params=f1\ f2
 comment6.target=int\ compare(Factura,\ Factura)
-numComments=7
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8
