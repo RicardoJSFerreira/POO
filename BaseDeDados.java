@@ -20,6 +20,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Scanner;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 14660dad5235ffbf8e7bff072eee04faf2ed2ef9
 public class BaseDeDados
 {
 
@@ -28,10 +32,9 @@ private static HashMap<Integer,CEmpresas> contribuintesE;
     
 
 public void addContribuinteIndividual(int NIF, String Email, String nome, String morada, String password,
-int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon,
-double deducfiscal){
+int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
     CIndividuais newCI = new CIndividuais(NIF,Email,nome,morada,password,new_dependentes
-    ,new_NIFdependentes,new_coefFiscal,new_ativEcon,deducfiscal);
+    ,new_NIFdependentes,new_coefFiscal,new_ativEcon);
     
     contribuintesI.put(NIF,newCI);
 }
@@ -43,6 +46,19 @@ String[] new_ativEcon, double new_deducoes){
      
      contribuintesE.put(NIF,newCE);
     }
+    
+public CIndividuais getCIndividual(int NIF){
+    CIndividuais c = contribuintesI.get(NIF);
+    return c;
+}
+    
+public void setFaturas(Factura f){
+       CEmpresas ce = contribuintesE.get(f.getNIFEmitente());
+       ce.faturas.add(f);
+       CIndividuais ci = contribuintesI.get(f.getNIFCliente());
+       ce.setFaturas(f,ci);
+}
+
     
 public int verifica_login(int NIF, String password){
     
@@ -69,7 +85,7 @@ public String infoContribuinteI(CIndividuais c){
         result.add(f.get(i).getDesignacao());
     }
     
-    String escreve = "Faturas : " + result.toString() + "Deduzido : " + c.getDeducFiscal();
+    String escreve = "Faturas : " + result.toString() + "Deduzido : " + c.getdeduzido();
     return escreve;
 }
 
@@ -82,7 +98,7 @@ public String listaFacturasPorValor(CEmpresas c){
     
     Collections.sort(f, new Comparator<Factura>() {
       public int compare(Factura f1, Factura f2){
-            return Double.compare(f1.getDespesa(),f1.getDespesa());
+            return Double.compare(f1.getDespesa(),f2.getDespesa());
         }
     });
     
@@ -108,9 +124,77 @@ public String listaFacturasPorValor(CEmpresas c){
         if(c==2){
            Registo l = new Registo();
 
+<<<<<<< HEAD
         }
         else{
            System.exit(0);
         }
     }
+=======
+public String get10QueMaisGastam(){
+    ArrayList<CIndividuais> ci = new ArrayList<CIndividuais>();
+    for(CIndividuais c : contribuintesI.values()){
+            ci.add(c);
+    }
+    
+    Collections.sort(ci, new Comparator<CIndividuais>() {
+        public int compare(CIndividuais c1, CIndividuais c2){
+            return Double.compare(c1.getDespesaTotal(),c2.getDespesaTotal());
+        }
+    });
+    
+    LinkedHashMap<String,Double> result = new LinkedHashMap<String,Double>();
+    
+    for(int i=0; i<ci.size() && i<10; i++){
+        result.put(ci.get(i).getNome(),ci.get(i).getDespesaTotal());
+    }
+    
+    String escreve = result.toString();
+    return escreve;
+}
+
+public String getTotalFacturado(CEmpresas c){
+    
+}
+public String listaFacturasPorData(CEmpresas c){
+    ArrayList<Factura> f = new ArrayList<Factura>();
+    
+    for(Factura f1 : c.getFaturas()){
+        f.add(f1);
+    }
+    Collections.sort(f, new Comparator<Factura>() {
+      public int compare(Factura f1, Factura f2){
+          if(((f1.getData()).before(f2.getData()))){
+            return Date.compare(f1.getData(),f2.getData());
+        }
+        } 
+});
+}
+public static void saveState() {
+        Save_State io;
+        io = new Save_State();
+        io.WriteHashMap(contribuintesI,1);
+        io.WriteHashMap(contribuintesE,2);
+}
+
+public static void main (String[] args) {
+    System.out.println("Pretende fazer Login(1),Registo(2) ou Sair(3)? ");
+    //ler
+    Scanner ler = new Scanner(System.in);
+    int c = ler.nextInt();
+    
+    if(c==1){
+       Login l = new Login();
+          
+    }
+    if(c==2){
+       Registo l = new Registo();
+
+    }
+    else{
+       System.exit(0);
+    }
+
+}
+>>>>>>> 14660dad5235ffbf8e7bff072eee04faf2ed2ef9
 }
