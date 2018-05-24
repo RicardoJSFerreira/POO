@@ -12,10 +12,6 @@ public class Login
     private  String[] yo;
     public Login()
     {
-<<<<<<< HEAD
-       int i=0;
-=======
->>>>>>> 14660dad5235ffbf8e7bff072eee04faf2ed2ef9
        BaseDeDados b = new BaseDeDados();
        Scanner ler = new Scanner(System.in);
        System.out.println("Indique o seu NIF");

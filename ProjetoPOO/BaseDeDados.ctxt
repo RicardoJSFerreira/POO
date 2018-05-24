@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=BaseDeDados
+comment1.params=NIF\ Email\ nome\ morada\ password\ new_dependentes\ new_NIFdependentes\ new_coefFiscal\ new_ativEcon\ deducfiscal
+comment1.target=void\ addContribuinteIndividual(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int[],\ double,\ int[],\ double)
+comment2.params=NIF\ Email\ nome\ morada\ password\ new_ativEcon\ new_deducoes
+comment2.target=void\ addContribuinteEmpresa(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String[],\ double)
+comment3.params=NIF\ password
+comment3.target=int\ verifica_login(int,\ java.lang.String)
+comment4.params=c
+comment4.target=java.lang.String\ infoContribuinteI(CIndividuais)
+comment5.params=c
+comment5.target=java.lang.String\ listaFacturasPorValor(CEmpresas)
+comment6.params=f1\ f2
+comment6.target=int\ compare(Factura,\ Factura)
+numComments=7

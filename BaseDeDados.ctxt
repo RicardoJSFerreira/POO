@@ -8,19 +8,6 @@ comment11.params=args
 comment11.target=void\ main(java.lang.String[])
 comment2.params=NIF\ Email\ nome\ morada\ password\ new_ativEcon\ new_deducoes
 comment2.target=void\ addContribuinteEmpresa(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String[],\ double)
-<<<<<<< HEAD
-comment3.params=NIF\ password
-comment3.target=int\ verifica_login(int,\ java.lang.String)
-comment4.params=c
-comment4.target=java.lang.String\ infoContribuinteI(CIndividuais)
-comment5.params=c
-comment5.target=java.lang.String\ listaFacturasPorValor(CEmpresas)
-comment6.params=f1\ f2
-comment6.target=int\ compare(Factura,\ Factura)
-comment7.params=args
-comment7.target=void\ main(java.lang.String[])
-numComments=8
-=======
 comment3.params=NIF
 comment3.target=CIndividuais\ getCIndividual(int)
 comment4.params=f
@@ -36,4 +23,3 @@ comment8.target=int\ compare(Factura,\ Factura)
 comment9.params=
 comment9.target=java.lang.String\ get10QueMaisGastam()
 numComments=12
->>>>>>> 14660dad5235ffbf8e7bff072eee04faf2ed2ef9
