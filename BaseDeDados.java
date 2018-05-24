@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.io.FileNotFoundException;
 
 public class BaseDeDados
 {
@@ -95,5 +96,12 @@ public String listaFacturasPorValor(CEmpresas c){
     String escreve = result.toString();
     return escreve;
 }
+
+public static void saveState() {
+        Save_State io;
+        io = new Save_State();
+        io.WriteHashMap(contribuintesI,1);
+        io.WriteHashMap(contribuintesE,2);
+    }
 
 }

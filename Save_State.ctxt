@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Save_State
+comment1.params=l\ ID
+comment1.target=void\ WriteHashMap(java.util.HashMap,\ int)
+comment2.params=l\ ID
+comment2.target=void\ ReadHashMap(java.util.HashMap,\ int)
+numComments=3
