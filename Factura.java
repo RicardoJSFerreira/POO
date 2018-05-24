@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Date;
 /**
  * Escreva a descrição da classe Factura aqui.
  * 
@@ -9,7 +10,7 @@ public class Factura
 {
     private int NIFEmitente;
     private String designacao;
-    private LocalDate data;
+    private Date data;
     private int NIFCliente;
     private TipoFactura fat;
     private String descricao;
@@ -19,13 +20,13 @@ public class Factura
     {
         this.NIFEmitente = 0;
         this.designacao = null;
-        this.data = LocalDate.now();
+        this.data = null;
         this.NIFCliente = 0;
         this.descricao = null;
         this.valorDespesa = 0;
     }
 
-    public Factura(int NIFEmitente, String designacao, LocalDate data, int NIFCliente,
+    public Factura(int NIFEmitente, String designacao, Date data, int NIFCliente,
     TipoFactura fat, String descricao, double valorDespesa){
         this.NIFEmitente = NIFEmitente;
         this.designacao = designacao;
@@ -53,7 +54,7 @@ public class Factura
         return this.designacao;
     }
     
-    public LocalDate getData(){
+    public Date getData(){
         return this.data;
     }
     
@@ -77,7 +78,7 @@ public class Factura
         this.designacao = designacao;
     }
     
-    public void setData(LocalDate data){
+    public void setData(Date data){
         this.data = data;
     }
     
@@ -118,10 +119,4 @@ public class Factura
         return (f.getDespesa()*fat.getDeducao());
     }
     
-    public boolean podeAdicionar(double x, Factura f){
-        if(x+f.retornaDedutivel(f)>=f.fat.getValormaximo()){
-            return false;
-        }
-        return true;
-    }
 }

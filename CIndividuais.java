@@ -5,7 +5,8 @@ public class CIndividuais extends Contribuintes
     private int[] NIFdependentes;
     private double coefFiscal;
     private int[] ativEconomicas;
-    private double deducfiscal;
+    private double despesaTotal;
+    private double deduzido;
 
     /**
      * COnstrutor para objetos da classe CIndividuais
@@ -16,12 +17,12 @@ public class CIndividuais extends Contribuintes
         this.NIFdependentes=null;
         this.coefFiscal=0;
         this.ativEconomicas=null;
-        this.deducfiscal=0;
+        this.despesaTotal=0;
+        this.deduzido=0;
     }
     
     public CIndividuais(int NIF, String Email, String nome, String morada, String password,
-    int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon,
-    double deducfiscal){
+    int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
         this.NIF=NIF;
         this.email=Email;
         this.nome=nome;
@@ -31,7 +32,8 @@ public class CIndividuais extends Contribuintes
         this.NIFdependentes=new_NIFdependentes;
         this.coefFiscal=new_coefFiscal;
         this.ativEconomicas=new_ativEcon;
-        this.deducfiscal=deducfiscal;
+        this.despesaTotal=0;
+        this.deduzido=0;
     }
 
     public CIndividuais(CIndividuais novoContribuinte){
@@ -39,7 +41,8 @@ public class CIndividuais extends Contribuintes
         this.NIFdependentes=novoContribuinte.getNIFdepen();
         this.coefFiscal=novoContribuinte.getCoef();
         this.ativEconomicas=novoContribuinte.getAtiv();
-        this.deducfiscal=novoContribuinte.getDeducFiscal();
+        this.deduzido=novoContribuinte.getdeduzido();
+        this.despesaTotal=novoContribuinte.getDespesaTotal();
     }
     
     public int getDepen(){
@@ -58,8 +61,12 @@ public class CIndividuais extends Contribuintes
         return this.ativEconomicas;
     }
     
-    public double getDeducFiscal(){
-        return this.deducfiscal;   
+    public double getDespesaTotal(){
+        return this.despesaTotal;
+    }
+    
+    public double getdeduzido(){
+        return this.deduzido;   
     }
     
     public void setDepen (int dependentes){
@@ -78,8 +85,8 @@ public class CIndividuais extends Contribuintes
         this.ativEconomicas=ativEconomicas;
     }
     
-    public void setDeducFiscal (double deducfiscal){
-        this.deducfiscal=deducfiscal;
+    public void setdeduzido (double deduzido){
+        this.deduzido=deduzido;
     }
     
     public boolean equals (CIndividuais ci){
@@ -93,12 +100,8 @@ public class CIndividuais extends Contribuintes
        
     }
     
-    public void setFaturasInd(Factura f){
-        if(f.getNIFCliente()==this.NIF){
-            faturas.add(f.clone());
-            if(f.podeAdicionar(f.retornaDedutivel(f.clone()),f)){
-                this.deducfiscal+=f.retornaDedutivel(f.clone());
-        }
+    public void addDedutivel(Factura f){
+        this.despesaTotal += f.getDespesa();
+        this.deduzido += f.retornaDedutivel(f);
     }
-}
 }

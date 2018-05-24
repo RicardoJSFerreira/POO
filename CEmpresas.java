@@ -1,9 +1,12 @@
-
+import java.util.List;
 public class CEmpresas extends Contribuintes
 {
     private String[] ativEconomicas;
     private double deducoes;
     private Concelho concelho;
+    private int n_faturas;
+    private double faturado;
+    private List<Integer> IndivAdicionados;
 
     /**
      * COnstrutor para objetos da classe CEmpresas
@@ -54,9 +57,13 @@ public class CEmpresas extends Contribuintes
         return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
     }
     
-    public void setFaturasEmp(Factura f){
-        if(f.getNIFEmitente()==this.NIF){
-            faturas.add(f.clone());
-        }
+    public void setFaturas(Factura f,CIndividuais c) { // adicionar dedução
+        c.faturas.add(f);
+        c.addDedutivel(f);
+        this.faturado = this.faturado + (f.getDespesa() - (f.getDespesa() *
+        concelho.getDeducao()));
+        this.n_faturas++;
+        this.IndivAdicionados.add(c.getNIF());
     }
 }
+

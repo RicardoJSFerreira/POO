@@ -52,7 +52,6 @@ public abstract class Contribuintes
         
     }
     
-    
     public ArrayList<Factura> getFaturas(){
         ArrayList<Factura>res= new ArrayList<>(faturas.size());
         for(Factura x : faturas){
