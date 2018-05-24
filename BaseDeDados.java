@@ -134,7 +134,20 @@ public String get10QueMaisGastam(){
 public String getTotalFacturado(CEmpresas c){
     
 }
-
+public String listaFacturasPorData(CEmpresas c){
+    ArrayList<Factura> f = new ArrayList<Factura>();
+    
+    for(Factura f1 : c.getFaturas()){
+        f.add(f1);
+    }
+    Collections.sort(f, new Comparator<Factura>() {
+      public int compare(Factura f1, Factura f2){
+          if(((f1.getData()).before(f2.getData()))){
+            return Date.compare(f1.getData(),f2.getData());
+        }
+        } 
+});
+}
 public static void saveState() {
         Save_State io;
         io = new Save_State();
