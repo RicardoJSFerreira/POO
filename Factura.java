@@ -1,7 +1,10 @@
 import java.time.LocalDate;
 import java.util.Date;
 /**
- * Classe que cria uma Fatura.
+ * Escreva a descrição da classe Factura aqui.
+ * 
+ * @author (seu nome) 
+ * @version (número de versão ou data)
  */
 public class Factura
 {

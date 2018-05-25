@@ -1,7 +1,4 @@
 import java.util.List;
-/**
- * Classe que é subclasse de Contribuintes e que guarda a informação relativa aos Contribuintes Empresas.
- */
 public class CEmpresas extends Contribuintes
 {
     private String[] ativEconomicas;
@@ -12,7 +9,7 @@ public class CEmpresas extends Contribuintes
     private List<Integer> IndivAdicionados;
 
     /**
-     * Construtor para objetos da classe CEmpresas
+     * COnstrutor para objetos da classe CEmpresas
      */
     public CEmpresas()
     {
@@ -59,9 +56,7 @@ public class CEmpresas extends Contribuintes
     public String toString(){
         return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
     }
-    /**
-     * 
-     */
+    
     public void setFaturas(Factura f,CIndividuais c) { // adicionar dedução
         c.faturas.add(f);
         c.addDedutivel(f);

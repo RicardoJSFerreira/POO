@@ -1,7 +1,4 @@
-/**
- * Classe que é subclasse de Contribuintes e que guarda a informação relativa aos Contribuintes individuais.
- * 
- */
+
 public class CIndividuais extends Contribuintes
 {
     private int dependentes;
@@ -12,7 +9,7 @@ public class CIndividuais extends Contribuintes
     private double deduzido;
 
     /**
-     * Construtor para objetos da classe CIndividuais
+     * COnstrutor para objetos da classe CIndividuais
      */
     public CIndividuais()
     {
