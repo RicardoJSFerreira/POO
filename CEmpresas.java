@@ -33,6 +33,14 @@ public class CEmpresas extends Contribuintes
         this.deducoes=novoContribuinte.getDeduc();
     }
     
+     public int getNFaturas(){
+        return this.n_faturas;
+    }
+    
+    public double getFaturado(){
+        return this.faturado;
+    }
+    
     public String[] getAtiv(){
         return this.ativEconomicas;
     }
@@ -57,13 +65,14 @@ public class CEmpresas extends Contribuintes
         return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
     }
     
-    public void setFaturas(Factura f,CIndividuais c) { // adicionar dedução
+     public void setFaturas(Factura f,CIndividuais c) { // adicionar dedução
         c.faturas.add(f);
         c.addDedutivel(f);
-        this.faturado = this.faturado + (f.getDespesa() - (f.getDespesa() *
-        concelho.getDeducao()));
+        this.faturado += f.getDespesa();
+        this.deducoes = f.getDespesa()*this.concelho.getDeducao();
         this.n_faturas++;
         this.IndivAdicionados.add(c.getNIF());
     }
+    
 }
 

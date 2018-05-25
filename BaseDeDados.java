@@ -56,6 +56,7 @@ int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_a
     
     contribuintesI.put(NIF,newCI);
 }
+
 /**
  * Adiciona um contribuinte Empresa
  * 
@@ -75,6 +76,7 @@ String[] new_ativEcon, double new_deducoes){
      
      contribuintesE.put(NIF,newCE);
     }
+    
 /**
  * Devolve um contribuinte individual
  * @param NIF           Número de indentificação fiscal do contribuinte Individual
@@ -84,7 +86,7 @@ public CIndividuais getCIndividual(int NIF){
     return c;
 }
 
-public CEmpresas getCEmpresas(int NIF){
+public CEmpresas getCEmpresa(int NIF){
     CEmpresas c = contribuintesE.get(NIF);
     return c;
 }
@@ -117,6 +119,7 @@ public int verifica_login(int NIF, String password){
     }
     return 0;
 }
+
 /**
  * Lista de faturas e a sua designação
  */
@@ -146,6 +149,7 @@ public String infoContribuinteI(CIndividuais c){
     String escreve = "Faturas : " + result.toString() + "Deduzido : " + deduzido;
     return escreve;
 }
+
 /**
  * Lista de faturas ordenada pelo seu valor
  * @param c
@@ -173,6 +177,7 @@ public String listaFacturasPorValor(CEmpresas c){
     String escreve = result.toString();
     return escreve;
 }
+
 /**
  * Lista dos 10 contribuintes individuais que mais gastam.
  * 
@@ -194,6 +199,29 @@ public String get10QueMaisGastam(){
     
     for(int i=0; i<ci.size() && i<10; i++){
         result.put(ci.get(i).getNome(),ci.get(i).getDespesaTotal());
+    }
+    
+    String escreve = result.toString();
+    return escreve;
+}
+
+public String empresasComMaisFaturas(int X){
+    ArrayList<CEmpresas> ce = new ArrayList<CEmpresas>();
+    
+    for(CEmpresas c : contribuintesE.values()){
+        ce.add(c);
+    }
+    
+    Collections.sort(ce, new Comparator<CEmpresas>() {
+        public int compare(CEmpresas c1, CEmpresas c2){
+            return Double.compare(c1.getNFaturas(),c2.getNFaturas());
+        }
+    });
+    
+    LinkedHashMap<Integer,Double> result = new LinkedHashMap<Integer,Double>();
+    
+    for(int i=0; i<ce.size() && i<X; i++){
+        result.put(ce.get(i).getNFaturas(),ce.get(i).getDeduc());
     }
     
     String escreve = result.toString();
@@ -244,6 +272,7 @@ public String listaFacturasCIndividuais(Date end, Date begin, int NIF, CEmpresas
     String escreve = result.toString();
     return escreve;
 }
+
 /**
  * Lista de Faturas ordenada por datas da mais antiga para a mais recente.
  */
@@ -296,6 +325,8 @@ public String listaFacturasValorDespesa(CEmpresas c, int NIF){
 String escreve= result.toString();
 return escreve;
 }
+
+
 /** 
  * Guarda os dados do programa.
  */
