@@ -1,33 +1,35 @@
-
+import java.util.Scanner;
 /**
- * Escreva a descrição da classe Registo aqui.
+ * Escreva a descrição da classe Login aqui.
  * 
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
 public class Registo
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
-
-    /**
-     * COnstrutor para objetos da classe Registo
-     */
+    private int NIF_novo;
+    private String password_novo;
+    private String[] yo;
     public Registo()
-    {
-        // inicializa variáveis de instância
-        x = 0;
-    }
-
-    /**
-     * Exemplo de método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   exemplo de um parâmetro de método
-     * @return     a soma de x com y 
-     */
-    public int sampleMethod(int y)
-    {
-        // ponha seu código aqui
-        return x + y;
+    {   
+       int tipo_contribuinte;
+       BaseDeDados b = new BaseDeDados();
+       Scanner ler = new Scanner(System.in);
+       System.out.println("Verfique se se trata de (1) Contribuinte particular, (2) Contribuinte de empresarial");
+       tipo_contribuinte = ler.nextInt();
+       
+      if(tipo_contribuinte == 1){
+         Registo_Individual l = new Registo_Individual();
+         
+       }
+      if(tipo_contribuinte == 2){
+         Registo_Empresarial k = new Registo_Empresarial();
+         
+       }
+      
+      else{
+           b.main(yo);
+           
+        }
     }
 }
