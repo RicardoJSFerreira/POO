@@ -1,9 +1,6 @@
 
 /**
- * Enumeration class Concelho - write a description of the enum class here
- * 
- * @author (your name here)
- * @version (version number or date here)
+ * Enum de todos os concelhos de Portugal.
  */
 public enum Concelho
 {

@@ -1,9 +1,6 @@
 
 /**
- * Enumeration class TipoFactura - write a description of the enum class here
- * 
- * @author (your name here)
- * @version (version number or date here)
+ * Enum do tipo de factura.
  */
 public enum TipoFactura
 {    
