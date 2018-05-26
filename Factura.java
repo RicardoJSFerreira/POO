@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 import java.util.Date;
-
+import java.io.Serializable;
 /**
  * Classe que cria uma Fatura.
  */
-public class Factura
+public class Factura implements Serializable
 {
     private int NIFEmitente;
     private String designacao;

@@ -1,8 +1,8 @@
-
+import java.io.Serializable;
 /**
  * Enum de todos os concelhos de Portugal.
  */
-public enum Concelho
+public enum Concelho implements Serializable
 {
     Abrantes    (0.35),
     Agueda  (0.35),

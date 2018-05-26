@@ -20,8 +20,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Scanner;
-
-
+import java.io.Serializable;
+import java.awt.EventQueue;
 
 /**
  * O .. é um programa que permite resgistar faturas por parte de empresas, a que os clientes vão ter acesso a estas e poder verificar se são dedutiveis entre outras funções.
@@ -72,9 +72,8 @@ int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
  * 
  */
 public void addContribuinteEmpresa(int NIF, String Email, String nome, String morada, String password,
-String[] new_ativEcon, double new_deducoes){
-     CEmpresas newCE = new CEmpresas(NIF,Email,nome,morada,password,new_ativEcon
-     ,new_deducoes);
+String[] new_ativEcon){
+     CEmpresas newCE = new CEmpresas(NIF,Email,nome,morada,password,new_ativEcon);
      
      contribuintesE.put(NIF,newCE);
     }
@@ -96,10 +95,10 @@ public CEmpresas getCEmpresa(int NIF){
 /**
  * Adiciona o NIF de um emitente(Empresa) 
  */
-public void setFaturas(Factura f){
-       CEmpresas ce = contribuintesE.get(f.getNIFEmitente());
+public void setFaturas(Factura f, int x, int y){
+       CEmpresas ce = contribuintesE.get(x);
        ce.faturas.add(f);
-       CIndividuais ci = contribuintesI.get(f.getNIFCliente());
+       CIndividuais ci = contribuintesI.get(y);
        ce.setFaturas(f,ci);
 }
 
@@ -344,6 +343,22 @@ public static void main (String[] args) {
     //ler
     Scanner ler = new Scanner(System.in);
     int c = ler.nextInt();
+    
+    EventQueue.invokeLater(new Runnable() {
+        public void run(){
+            try{
+                Save_State io;
+                io = new Save_State();
+                io.ReadHashMap(contribuintesI,1);
+                io.ReadHashMap(contribuintesE,2);
+                
+            }
+            
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    });
     
     if(c==1){
        Login l = new Login();

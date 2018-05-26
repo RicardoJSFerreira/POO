@@ -1,8 +1,10 @@
 import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
 /**
  * Classe que é subclasse de Contribuintes e que guarda a informação relativa aos Contribuintes Empresas.
  */
-public class CEmpresas extends Contribuintes
+public class CEmpresas extends Contribuintes implements Serializable
 {
     private String[] ativEconomicas;
     private double deducoes;
@@ -18,17 +20,23 @@ public class CEmpresas extends Contribuintes
     {
         this.ativEconomicas=null;
         this.deducoes=0.0;
+        this.n_faturas = 0;
+        this.faturado = 0.0;
+        this.IndivAdicionados = null;
     }
 
     public CEmpresas(int NIF, String Email, String nome, String morada, String password,
-    String[] new_ativEcon, double new_deducoes){
+    String[] new_ativEcon){
         this.NIF=NIF;
         this.email=Email;
         this.nome=nome;
         this.morada=morada;
         this.password=password;
         this.ativEconomicas=new_ativEcon;
-        this.deducoes=new_deducoes;
+        this.faturas = new ArrayList<Factura>();
+        this.n_faturas = (int) 0;
+        this.faturado = (double) 0;
+        this.deducoes=(double) 0.0;
     }
     
     public CEmpresas(CEmpresas novoContribuinte){

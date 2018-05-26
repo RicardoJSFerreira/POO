@@ -27,9 +27,6 @@ public class Registo
          
        }
       
-      else{
-           b.main(yo);
-           
-        }
+      b.main(yo);
     }
 }

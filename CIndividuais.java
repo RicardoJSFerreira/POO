@@ -1,8 +1,10 @@
+import java.io.Serializable;
+import java.util.ArrayList;
 /**
  * Classe que é subclasse de Contribuintes e que guarda a informação relativa aos Contribuintes individuais.
  * 
  */
-public class CIndividuais extends Contribuintes
+public class CIndividuais extends Contribuintes implements Serializable
 {
     private int dependentes;
     private int[] NIFdependentes;
@@ -31,6 +33,7 @@ public class CIndividuais extends Contribuintes
         this.nome=nome;
         this.morada=morada;
         this.password=password;
+        this.faturas=new ArrayList<Factura>();
         this.dependentes=new_dependentes;
         this.NIFdependentes=new_NIFdependentes;
         this.ativEconomicas=new_ativEcon;

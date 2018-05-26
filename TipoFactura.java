@@ -1,8 +1,8 @@
-
+import java.io.Serializable;
 /**
  * Enum do tipo de factura.
  */
-public enum TipoFactura
+public enum TipoFactura implements Serializable
 {    
     DESPESASGERAIS  (0.35),
     SAUDE   (0.15),

@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.io.Serializable;
 /**
  * Classe abstrata Contribuintes - escreva a descrição da classe aqui
  * 
  * @author (seu nome aqui)
  * @version (versão ou data)
  */
-public abstract class Contribuintes
+public abstract class Contribuintes implements Serializable
 {
     
     

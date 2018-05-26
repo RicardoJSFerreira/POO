@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.Date;
-
+import java.util.Locale;
  public class Set_Fatura_Empresa
 {
     public Set_Fatura_Empresa(int newNif){
@@ -17,6 +17,8 @@ import java.util.Date;
     
        BaseDeDados b = new BaseDeDados();
        Scanner ler = new Scanner(System.in);
+       ler.useLocale(Locale.ENGLISH);
+       System.out.println("NIF :" + newNif);
        System.out.println("Indique a designaçao da fatura");
        designacao = ler.next();
        System.out.println("Indique a data de emissão: dia");//meter na mesma maneira como le
@@ -36,7 +38,7 @@ import java.util.Date;
        valorDespesa = ler.nextDouble();
        
        Factura fac = new Factura(newNif,designacao,data,NIFCliente,fat,descricao,valorDespesa);
-       b.setFaturas(fac);
+       b.setFaturas(fac,newNif,NIFCliente);
        String sucesso = "A sua fatura com contribuinte" + String.valueOf(NIFCliente) + "foi adicionada com sucesso";
        
     }

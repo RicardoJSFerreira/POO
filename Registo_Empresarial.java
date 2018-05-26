@@ -17,20 +17,16 @@ public class Registo_Empresarial
        System.out.println("Indique o seu NIF");
        new_NIF = ler.nextInt();
        System.out.println("Indique o seu email");
-       new_Email = ler.nextLine();       
+       new_Email = ler.next();       
        System.out.println("Indique o seu nome");
        new_nome = ler.next();     
        System.out.println("Indique a sua morada");
        new_morada = ler.next();     
        System.out.println("Indique uma PassWord");
-       new_password = ler.next();   
-       System.out.println("Indique a deducao em vigor");
-       new_deducoes = ler.nextDouble();        
-
-       //atividade economica
+       new_password = ler.next();         
 
        b.addContribuinteEmpresa(new_NIF,new_Email,new_nome, new_morada,new_password,
-       new_ativEcon,new_deducoes);
+       new_ativEcon);
 
        System.out.println("Conta empresarial criada com sucesso");
 
