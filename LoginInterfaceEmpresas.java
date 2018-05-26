@@ -6,6 +6,8 @@ public class LoginInterfaceEmpresas
     public LoginInterfaceEmpresas(int newNif, String passWord)
     {
        int i;
+       int dia, mes, ano;
+       Date data_end, data_begin;
        BaseDeDados b = new BaseDeDados();
        Scanner ler = new Scanner(System.in);
        System.out.println("Indique o que pretende fazer:");
@@ -36,7 +38,23 @@ public class LoginInterfaceEmpresas
        System.out.println(lista_fat_valor);
         }
        if(i==5){
-       String total_faturado =b.getTotalFacturado(contrib); //nao dava para compilar
+       System.out.println("Indique a data de inicio: dia");//meter na mesma maneira como le
+       dia = ler.nextInt();
+       System.out.println("Indique a data de inicio: mes");
+       mes = ler.nextInt();
+       System.out.println("Indique a data de inicio: ano");
+       ano = ler.nextInt();
+       data_begin = new Date(ano,mes,dia); // Ver como transformar para formato data
+       
+       System.out.println("Indique a data do fim: dia");//meter na mesma maneira como le
+       dia = ler.nextInt();
+       System.out.println("Indique a data do fim: mes");
+       mes = ler.nextInt();
+       System.out.println("Indique a data do fim: ano");
+       ano = ler.nextInt();
+       data_end = new Date(ano,mes,dia);
+       
+       String total_faturado =b.getTotalFacturado(contrib,data_end,data_begin); //nao dava para compilar
        System.out.println(total_faturado);
        }
     }

@@ -11,9 +11,10 @@ import java.util.Map;
 /**
  * Classe responsável pelo save e pelo load do estado do programa.
  */
+
 public class Save_State
 {
-    public static void WriteHashMap(HashMap<Integer, ?>l, int ID){
+    public static void WriteHashMap(HashMap<Integer, ?> l, int ID){
         
         FileOutputStream fileoutput = null;
         ObjectOutputStream objectoutput = null;

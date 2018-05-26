@@ -8,21 +8,30 @@ import java.util.Date;
     String designacao;
     Date data;
     int NIFCliente;
-    TipoFactura fat;
+    int dia;
+    int mes;
+    int ano;
+    String fat;
     String descricao;
     double valorDespesa;
     
        BaseDeDados b = new BaseDeDados();
        Scanner ler = new Scanner(System.in);
        System.out.println("Indique a designaçao da fatura");
-       designacao = ler.nextLine();
-       System.out.println("Indique a data de emissão no formato dia/mes/ano");//meter na mesma maneira como le
-       data = ler.nextDate(); // Ver como transformar para formato data
+       designacao = ler.next();
+       System.out.println("Indique a data de emissão: dia");//meter na mesma maneira como le
+       dia = ler.nextInt();
+       System.out.println("Indique a data de emissão: mes");
+       mes = ler.nextInt();
+       System.out.println("Indique a data de emissão: ano");
+       ano = ler.nextInt();
+       data = new Date(ano,mes,dia); // Ver como transformar para formato data
        System.out.println("Indique o contribuinte do cliente");
        NIFCliente = ler.nextInt();
-       //falta tipo fatura
+       System.out.println("Indique o tipo da fatura");
+       fat = ler.next();
        System.out.println("Indique a descricao da fatura");
-       descricao = ler.nextLine();
+       descricao = ler.next();
        System.out.println("Indique o valor da despesa");
        valorDespesa = ler.nextDouble();
        

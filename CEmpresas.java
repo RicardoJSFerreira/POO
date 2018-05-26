@@ -67,9 +67,7 @@ public class CEmpresas extends Contribuintes
     public String toString(){
         return("Atividades económicas:" + this.ativEconomicas + "Deduções :" + this.deducoes);
     }
-    /**
-     * 
-     */
+    
      public void setFaturas(Factura f,CIndividuais c) { // adicionar dedução
         c.faturas.add(f);
         c.addDedutivel(f);

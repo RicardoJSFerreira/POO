@@ -25,7 +25,7 @@ public class CIndividuais extends Contribuintes
     }
     
     public CIndividuais(int NIF, String Email, String nome, String morada, String password,
-    int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
+    int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
         this.NIF=NIF;
         this.email=Email;
         this.nome=nome;
@@ -33,7 +33,6 @@ public class CIndividuais extends Contribuintes
         this.password=password;
         this.dependentes=new_dependentes;
         this.NIFdependentes=new_NIFdependentes;
-        this.coefFiscal=new_coefFiscal;
         this.ativEconomicas=new_ativEcon;
         this.despesaTotal=0;
         this.deduzido=0;

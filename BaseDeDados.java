@@ -33,8 +33,8 @@ public class BaseDeDados
 
 {
 
-private static HashMap<Integer,CIndividuais> contribuintesI;
-private static HashMap<Integer,CEmpresas> contribuintesE;
+private static HashMap<Integer,CIndividuais> contribuintesI= new HashMap<Integer,CIndividuais>();
+private static HashMap<Integer,CEmpresas> contribuintesE = new HashMap<Integer,CEmpresas>();
     
 /**
  * Adiciona um contrinuinte individual
@@ -50,9 +50,11 @@ private static HashMap<Integer,CEmpresas> contribuintesE;
  * @param new_ativEcon          Atividade económica
  */
 public void addContribuinteIndividual(int NIF, String Email, String nome, String morada, String password,
-int new_dependentes,int[] new_NIFdependentes, double new_coefFiscal, int[] new_ativEcon){
-    CIndividuais newCI = new CIndividuais(NIF,Email,nome,morada,password,new_dependentes
-    ,new_NIFdependentes,new_coefFiscal,new_ativEcon);
+int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
+    CIndividuais newCI = new CIndividuais();
+    
+    newCI = new CIndividuais(NIF,Email,nome,morada,password,new_dependentes
+    ,new_NIFdependentes,new_ativEcon);
     
     contribuintesI.put(NIF,newCI);
 }
@@ -352,6 +354,7 @@ public static void main (String[] args) {
 
     }
     else{
+       saveState();
        System.exit(0);
     }
 

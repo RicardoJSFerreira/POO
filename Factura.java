@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.Date;
+
 /**
  * Classe que cria uma Fatura.
  */
@@ -24,12 +25,12 @@ public class Factura
     }
 
     public Factura(int NIFEmitente, String designacao, Date data, int NIFCliente,
-    TipoFactura fat, String descricao, double valorDespesa){
+    String tipo, String descricao, double valorDespesa){
         this.NIFEmitente = NIFEmitente;
         this.designacao = designacao;
         this.data = data;
         this.NIFCliente = NIFCliente;
-        this.fat = fat;
+        this.fat = TipoFactura.valueOf(tipo);
         this.descricao = descricao;
         this.valorDespesa = valorDespesa;
     }

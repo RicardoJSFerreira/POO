@@ -18,8 +18,8 @@ public class LoginInterfaceUsers
        System.out.println(fat_emi_dedu);
         }
        if(i==2){
-       String fat_por_class = b.classificar_faturas();//falta acrescentar e meter tipo
-       System.out.println(fat_por_class);
+       //String fat_por_class = b.classificar_faturas();//falta acrescentar e meter tipo
+       //System.out.println(fat_por_class);
         }
     }
 
