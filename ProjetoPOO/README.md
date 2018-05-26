@@ -1,2 +1,0 @@
-# POO
-Trabalho de POO
