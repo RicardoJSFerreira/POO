@@ -1,0 +1,84 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage{a4wide}
+\usepackage{underscore}
+
+\title{Projeto de Programação Orientada aos Objetos\\Grupo }
+\author{Diogo Miguel Alves Rocha (A79751)\and Ricardo Milhazes Veloso (A81919) \and Ricardo Jorge Silva Ferreira (82568)}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ 
+ Neste relatório faremos a análise ao nosso projeto de Programação Orientada aos Objetos, no qual consiste em criar um programa em Java, chamado JavaFatura com o objetivo de criar um sistema de gestão e dedução de faturas que permita quer a clientes individuais quer a empresas gerir o seu estado fiscal em termos de faturação.
+
+ \end{abstract}
+
+\tableofcontents
+
+\section{Introdução}
+\label{sec:intro} 
+
+O principal objetivo deste projeto foi desenvolver um programa capaz de registar faturas com a finalidade, de as empresas e os clientes individuais terem acesso às mesmas quer a empresa do montante total de vendas e da dedução a que está sujeita , quer o cliente individual ter acesso ao montante total de gastos e saber qual o montante dedutivel. Para isso será necessário um registo no programa e outras funcionalidades que iremos demonstrar mais à frente neste relatório.
+
+
+\section{Descrição do Problema}
+Neste projeto o programa deve ser capaz de gerir o estado fiscal do utilizador para isso deve ser capaz de:
+
+\begin{itemize}
+\item Registar um utilizador (Individual ou Empresa);
+\item Implementar um login;
+\item Criar uma Fatura quer seja uma despesa (C.individual) ou uma venda (C.empresa);
+\item Ser possível ao contribuinte individual verificar as faturas emitidas em seu nome , e verificar a respetiva dedução fiscal acumulada;
+\item Associar classificação de actividade económica a um documento de despesa;
+\item Corrigir a classificação de actividade económica de um documento de despesa;
+\item Obter a listagem das facturas de uma determinada empresa, ordenada por data de emissão
+ou por valor;
+\item Obter por parte das empresas, as listagens das facturas por contribuinte individual num determinado
+intervalo de datas;
+\item Indicar o total facturado por uma empresa num determinado período;
+\item Determinar a relação dos 10 contribuintes que mais gastam em todo o sistema;
+\item Determinar as X empresas que mais facturas emitem em todo o sistema e o montante de
+deduções fiscais que as despesas registadas (dessas empresas) representam;
+\item Gravar o estado da aplicação em ficheiro, para que seja possível retomar mais tarde a execução
+
+\end{itemize}
+
+\section{Concepção da Solução}
+
+A nossa solução foi implementada baseada em diferentes classes , as quais vamos agora especificar:
+
+\begin{itemize}
+	\item{}
+
+\end{itemize}
+
+\section{Instruções de utilização}
+Em seguida uma espécie de manual de instruções para a utilização do nosso programa:
+
+\begin{itemize}
+	\item{Criar um utilizador}
+		\begin{itemize}
+			\item{Contribuinte individual}
+			\item{Contribuinte empresa}
+		\end{itemize}
+	\item{Contribuinte individual}
+		\begin{itemize}
+			\item{Fazer login no sistema}
+			\item{Verificar as depesas emitidas em seu nome e do agregado familiar}
+			\item{Corrigir a classificação de atividade económica}
+		\end{itemize}
+	\item{Contribuinte empresa}
+		\begin{itemize}
+			\item{Fazer login no sistema}
+			\item{Registar uma factura}
+			\item{Acesso às faturas por si emitidas}
+		\end{itemize}
+
+\end{itemize}
+
+\end{document}
