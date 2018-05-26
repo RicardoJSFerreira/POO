@@ -26,13 +26,14 @@ public class CEmpresas extends Contribuintes implements Serializable
     }
 
     public CEmpresas(int NIF, String Email, String nome, String morada, String password,
-    String[] new_ativEcon){
+    String tipoConcelho, String[] new_ativEcon){
         this.NIF=NIF;
         this.email=Email;
         this.nome=nome;
         this.morada=morada;
         this.password=password;
         this.ativEconomicas=new_ativEcon;
+        this.concelho=Concelho.valueOf(tipoConcelho);
         this.faturas = new ArrayList<Factura>();
         this.n_faturas = (int) 0;
         this.faturado = (double) 0;

@@ -72,8 +72,8 @@ int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
  * 
  */
 public void addContribuinteEmpresa(int NIF, String Email, String nome, String morada, String password,
-String[] new_ativEcon){
-     CEmpresas newCE = new CEmpresas(NIF,Email,nome,morada,password,new_ativEcon);
+String concelho,String[] new_ativEcon){
+     CEmpresas newCE = new CEmpresas(NIF,Email,nome,morada,password,concelho,new_ativEcon);
      
      contribuintesE.put(NIF,newCE);
     }
