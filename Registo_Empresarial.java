@@ -8,8 +8,8 @@ public class Registo_Empresarial
         String new_Email;
         String new_nome;
         String new_morada;
-        String new_password;
-        double new_deducoes;
+        String new_password;;
+        String concelho;
         String[] new_ativEcon = null;
         
        BaseDeDados b = new BaseDeDados();
@@ -21,11 +21,13 @@ public class Registo_Empresarial
        System.out.println("Indique o seu nome");
        new_nome = ler.next();     
        System.out.println("Indique a sua morada");
-       new_morada = ler.next();     
+       new_morada = ler.next();
+       System.out.println("Indique o seu concelho");
+       concelho = ler.next();
        System.out.println("Indique uma PassWord");
        new_password = ler.next();         
 
-       b.addContribuinteEmpresa(new_NIF,new_Email,new_nome, new_morada,new_password,
+       b.addContribuinteEmpresa(new_NIF,new_Email,new_nome, new_morada,new_password,concelho,
        new_ativEcon);
 
        System.out.println("Conta empresarial criada com sucesso");
