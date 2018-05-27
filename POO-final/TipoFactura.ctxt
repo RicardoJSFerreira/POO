@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TipoFactura
+comment0.text=\r\n\ Enum\ do\ tipo\ de\ factura.\r\n
+comment1.params=deducao
+comment1.target=TipoFactura(double)
+comment2.params=
+comment2.target=double\ getDeducao()
+numComments=3

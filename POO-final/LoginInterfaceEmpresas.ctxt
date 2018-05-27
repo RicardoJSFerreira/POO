@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=LoginInterfaceEmpresas
+comment1.params=newNif\ passWord
+comment1.target=LoginInterfaceEmpresas(int,\ java.lang.String)
+numComments=2

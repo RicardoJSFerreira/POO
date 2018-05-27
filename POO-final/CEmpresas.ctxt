@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=CEmpresas
+comment0.text=\r\n\ Classe\ que\ \u00E9\ subclasse\ de\ Contribuintes\ e\ que\ guarda\ a\ informa\u00E7\u00E3o\ relativa\ aos\ Contribuintes\ Empresas.\r\n
+comment1.params=
+comment1.target=CEmpresas()
+comment1.text=\r\n\ COnstrutor\ para\ objetos\ da\ classe\ CEmpresas\r\n
+comment10.params=f\ c
+comment10.target=void\ setFaturas(Factura,\ CIndividuais)
+comment10.text=\r\n\ Fun\u00E7\u00E3o\ que\ adiciona\ faturas\ num\ determinado\ contribuinte\ individual\r\n\ @param\ f\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Fatura\ que\ pretendemos\ adicionar\r\n\ @param\ c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Contribuinte\ a\ quem\ corresponde\ a\ fatura\r\n
+comment2.params=NIF\ Email\ nome\ morada\ password\ tipoConcelho
+comment2.target=CEmpresas(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment3.params=novoContribuinte
+comment3.target=CEmpresas(CEmpresas)
+comment4.params=
+comment4.target=int\ getNFaturas()
+comment5.params=
+comment5.target=double\ getFaturado()
+comment6.params=
+comment6.target=double\ getDeduc()
+comment7.params=deducoes
+comment7.target=void\ setDedu\u00E7\u00F5es(double)
+comment8.params=ce
+comment8.target=boolean\ equals(CEmpresas)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=11

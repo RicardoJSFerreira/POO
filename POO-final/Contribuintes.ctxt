@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Contribuintes
+comment0.text=\r\n\ Classe\ abstrata\ Contribuintes\ -\ escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ aqui\r\n\ \r\n\ @author\ (seu\ nome\ aqui)\r\n\ @version\ (vers\u00E3o\ ou\ data)\r\n
+comment1.params=
+comment1.target=int\ getNIF()
+comment1.text=\r\n\ COnstrutor\ para\ objetos\ da\ classe\ Contribuintes\r\n
+comment2.params=
+comment2.target=java.lang.String\ getEmail()
+comment3.params=
+comment3.target=java.lang.String\ getNome()
+comment4.params=
+comment4.target=java.lang.String\ getMorada()
+comment5.params=
+comment5.target=java.lang.String\ getPassword()
+comment6.params=con
+comment6.target=boolean\ equals(Contribuintes)
+comment7.params=
+comment7.target=java.lang.String\ toString()
+comment8.params=
+comment8.target=java.util.ArrayList\ getFaturas()
+numComments=9
