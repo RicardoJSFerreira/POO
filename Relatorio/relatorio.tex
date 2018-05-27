@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[portuges]{babel}
 \usepackage{a4wide}
+\usepackage{graphicx}
 \usepackage{underscore}
 
 \title{Projeto de Programação Orientada aos Objetos\\Grupo }
@@ -27,6 +28,7 @@ O principal objetivo deste projeto foi desenvolver um programa capaz de registar
 
 
 \section{Descrição do Problema}
+\label{sec:descricao do problema}
 Neste projeto o programa deve ser capaz de gerir o estado fiscal do utilizador para isso deve ser capaz de:
 
 \begin{itemize}
@@ -49,36 +51,173 @@ deduções fiscais que as despesas registadas (dessas empresas) representam;
 \end{itemize}
 
 \section{Concepção da Solução}
-
+\label{sec:solucao}
 A nossa solução foi implementada baseada em diferentes classes , as quais vamos agora especificar:
 
 \begin{itemize}
-	\item{}
-
+	\item{Contribuintes}
+		\begin{itemize}
+			\item{CIndividuais}
+			\item{CEmpresas}
+		\end{itemize}
+	\item{Factura}
+	\item{Save_State}
 \end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 420pt,height = 240pt]{bluej.png}
+	\caption{Bluej}
+\end{figure}
+
+\subsection{Contribuintes}
+Esta é uma superclasse que define variáveis como : NIF, email,nome,morada,password.
+
+\begin{description}
+	\item[CIndividuais] A classe referente aos contribuintes individuais inclui as variáveis definidas na superclasse Contribuintes mas também as variáveis : dependentes, NIFdependentes, coefFiscal, ativEconomicas , despesaTotal, deduzido.
+
+	\item[CEmpresas] A classe referente aos contribuinte Empresas 
+	inclui as variáveis definidas na superclasse Contribuintes mas também as variáveis : ativEconomicas , deducoes , concelho , n_faturas , faturado.
+\end{description}
+
+\subsection{Factura}
+Na classe Factura, classe que nos permite criar uma fatura (apenas disponível para Empresas), são definidas variáveis como : NIFEmitente, designacao , data , NIFCliente , fat, descricao , valorDespesa.
+
+\subsection{Save_State}
+Esta é a classe responsável por gravar o estado do programa num determinado momento e permitir a recuperação desse mesmo estado mais tarde. O estado é gravado em ficheiros que se encontram na mesma diretoria do programa.
+
+\subsection{BaseDeDados}
+Na implementação deste programa usamos duas HashMap, para guardar informação relativa a Contribuintes Individuais e a Contribuintes Empresas. A nossa escolha baseou-se no uso destas estruturas de dados , principalmente devido aos ganhos em termos de performance em relação a outras estruturas de dados existentes. 
 
 \section{Instruções de utilização}
+\label{sec:instrucoes}
 Em seguida uma espécie de manual de instruções para a utilização do nosso programa:
 
-\begin{itemize}
-	\item{Criar um utilizador}
-		\begin{itemize}
-			\item{Contribuinte individual}
-			\item{Contribuinte empresa}
-		\end{itemize}
-	\item{Contribuinte individual}
-		\begin{itemize}
-			\item{Fazer login no sistema}
-			\item{Verificar as depesas emitidas em seu nome e do agregado familiar}
-			\item{Corrigir a classificação de atividade económica}
-		\end{itemize}
-	\item{Contribuinte empresa}
-		\begin{itemize}
-			\item{Fazer login no sistema}
-			\item{Registar uma factura}
-			\item{Acesso às faturas por si emitidas}
-		\end{itemize}
+	\begin{itemize}
+		\item{Criar um utilizador}
+			\begin{itemize}
+				\item{Contribuinte individual}
+				\item{Contribuinte empresa}
+			\end{itemize}
+		\item{Contribuinte individual}
+			\begin{itemize}
+				\item{Fazer login no sistema}
+				\item{Verificar as depesas emitidas em seu nome e do agregado familiar}
+				\item{Corrigir a classificação de atividade económica}
+			\end{itemize}
+		\item{Contribuinte empresa}
+			\begin{itemize}
+				\item{Fazer login no sistema}
 
-\end{itemize}
+				\item{Registar uma factura}
+				\item{Acesso às faturas por si emitidas}
+			\end{itemize}
+		\item{Outras funcionalidades}
+			\begin{itemize}
+				\item{Guardar o estado do programa}
+				\item{Determinar os 10 contribuintes que mais gastam em todo o sistema}
+			\end{itemize}
+	\end{itemize}
+
+	\subsection{Criar um utilizador}
+
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width = 420pt,height = 240pt]{registo.png}
+			\caption{Registo}
+		\end{figure}
+
+		\subsubsection{Contribuinte Individual}
+
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 420pt,height = 240pt]{CI.png}
+				\caption{Registo contribuinte individual}
+			\end{figure}
+
+		\subsubsection{Contribuinte Empresa}
+
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 420pt,height = 240pt]{Ceregisto.png}
+				\caption{Registo contribuinte empresa}
+			\end{figure}
+
+	\subsection{Contribuinte Individual}
+		\subsubsection{Fazer login no sistema}
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 320pt,height = 140pt]{loginci.png}
+				\caption{Login contribuinte individual}
+			\end{figure}
+
+		\subsubsection{Verificar as depesas emitidas em seu nome e do agregado familiar}
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 320pt,height = 140pt]{faturaemitidasci.png}
+				\caption{Despesas contribuinte individual}
+			\end{figure}
+
+		\subsubsection{Corrigir a classificação de atividade económica}
+
+\pagebreak
+
+	\subsection{Contribuinte Empresa}
+
+		\subsubsection{Fazer login no sistema}
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 320pt,height = 140pt]{loginempresa.png}
+				\caption{Login contribuinte empresa}
+			\end{figure}
+		\subsubsection{Registar uma factura}
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width = 320pt,height = 240pt]{adicionarfaturaempresa.png}
+				\caption{Registar uma factura}
+			\end{figure}
+		\subsubsection{Acesso às faturas por si emitidas}
+			\begin{description}
+				\item[Faturas ordenadas por valor]
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width = 320pt,height = 240pt]{faturasporvalorEmpresa.png}
+						\caption{Faturas ordenadas por valor}
+					\end{figure}
+				\item[Faturas emitidas para um contribuinte individual num intervalo de tempo]
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width = 320pt,height = 240pt]{faturasemitidasporcontibuinte.png}
+						\caption{Faturas emitidas por contribuinte num intervalo de tempo}
+					\end{figure}
+				\item[Faturas emitidas por contribuinte ordenadas por valor]
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width = 320pt,height = 240pt]{faturasordenadasporvalor.png}
+						\caption{Faturas emitidas por contribuinte ordenadas por valor}
+					\end{figure}
+				\item[Total faturado por uma Empresa num intervalor de tempo]
+					\begin{figure}[htbp]
+						\centering
+						\includegraphics[width = 320pt,height = 240pt]{totalfaturadoempresa.png}
+						\caption{Total faturado por uma Empresa num intervalor de tempo}
+					\end{figure}
+			\end{description}
+
+	\subsection{Outras funcionalidades}
+		\subsubsection{Guardar o estado do programa}
+			\begin{figure}[htbp]
+						\centering
+						\includegraphics[width = 320pt,height = 240pt]{savestate.png}
+						\caption{Guardar o estado do programa}
+					\end{figure}
+			
+
+
+\section{Conclusão}
+\label{sec:conclusao}
+
+Este projeto teve o objetivo de aprofundar os nossos conhecimentos na linguagem de programação JAVA. Permitiu melhorar os nossos recursos tanto em termos do conhecimento da própria linguagem como da aplicação da mesma em problemas da vida real e por consequência uma melhoria na resolução destes e doutros problemas.
+Falando especificamente no desenvolvimento do projeto pensamos que foi um trabalho bastante bem conseguido com a resolução de todos os pontos propostos. Em suma foi um projeto bastante positivo com um muito bom funcionamento do grupo conseguindo assim responder a todos os problemas propostos.
 
 \end{document}
