@@ -1,0 +1,24 @@
+\select@language {portuges}
+\contentsline {section}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{3}
+\contentsline {section}{\numberline {2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{3}
+\contentsline {section}{\numberline {3}Concep\IeC {\c c}\IeC {\~a}o da Solu\IeC {\c c}\IeC {\~a}o}{4}
+\contentsline {subsection}{\numberline {3.1}Contribuintes}{4}
+\contentsline {subsection}{\numberline {3.2}Factura}{4}
+\contentsline {subsection}{\numberline {3.3}Save_State}{5}
+\contentsline {subsection}{\numberline {3.4}BaseDeDados}{5}
+\contentsline {section}{\numberline {4}Instru\IeC {\c c}\IeC {\~o}es de utiliza\IeC {\c c}\IeC {\~a}o}{5}
+\contentsline {subsection}{\numberline {4.1}Criar um utilizador}{6}
+\contentsline {subsubsection}{\numberline {4.1.1}Contribuinte Individual}{6}
+\contentsline {subsubsection}{\numberline {4.1.2}Contribuinte Empresa}{6}
+\contentsline {subsection}{\numberline {4.2}Contribuinte Individual}{7}
+\contentsline {subsubsection}{\numberline {4.2.1}Fazer login no sistema}{7}
+\contentsline {subsubsection}{\numberline {4.2.2}Verificar as depesas emitidas em seu nome e do agregado familiar}{7}
+\contentsline {subsubsection}{\numberline {4.2.3}Corrigir a classifica\IeC {\c c}\IeC {\~a}o de atividade econ\IeC {\'o}mica}{7}
+\contentsline {subsection}{\numberline {4.3}Contribuinte Empresa}{8}
+\contentsline {subsubsection}{\numberline {4.3.1}Fazer login no sistema}{8}
+\contentsline {subsubsection}{\numberline {4.3.2}Registar uma factura}{8}
+\contentsline {subsubsection}{\numberline {4.3.3}Acesso \IeC {\`a}s faturas por si emitidas}{9}
+\contentsline {subsection}{\numberline {4.4}Outras funcionalidades}{11}
+\contentsline {subsubsection}{\numberline {4.4.1}Guardar o estado do programa}{11}
+\contentsline {subsubsection}{\numberline {4.4.2}Privilegios de admninistrador}{11}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{11}
