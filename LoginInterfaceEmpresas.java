@@ -6,6 +6,7 @@ public class LoginInterfaceEmpresas
     public LoginInterfaceEmpresas(int newNif, String passWord)
     {
        int i;
+       int contribindiv;
        int dia, mes, ano;
        Date data_end, data_begin;
        BaseDeDados b = new BaseDeDados();
@@ -13,9 +14,10 @@ public class LoginInterfaceEmpresas
        System.out.println("Indique o que pretende fazer:");
        System.out.println("(1) Adicionar fatura");
        System.out.println("(2) Aceder á listagem das faturas emitidas por valor");
-       System.out.println("(3) Aceder á listagem das faturas emitidas para um contribuinte num intervalo de tempo");
+       System.out.println("(3) Aceder á listagem das faturas emitidas por data");
        System.out.println("(4) Aceder á listagem das faturas emitidas para um contribuinte ordenadas por valor  ");
-       System.out.println("(5) Saber o total faturado num intervalo de tempo");
+       System.out.println("(5) Aceder á listagem das faturas emitidas para um contribuinte num intervalo de tempo  ");
+       System.out.println("(6) Saber o total faturado num intervalo de tempo");
        
        
       
@@ -34,10 +36,36 @@ public class LoginInterfaceEmpresas
        System.out.println(lista_fat_tempo);
         }
        if(i==4){
-       String lista_fat_valor = b.listaFacturasPorValor(contrib);
+       System.out.println("Indique um contribuinte individual:");
+       contribindiv=ler.nextInt();
+       String lista_fat_valor = b.listaFacturasValorDespesa(contrib,contribindiv);
        System.out.println(lista_fat_valor);
         }
        if(i==5){
+       System.out.println("Indique a data de inicio: dia");//meter na mesma maneira como le
+       dia = ler.nextInt();
+       System.out.println("Indique a data de inicio: mes");
+       mes = ler.nextInt();
+       System.out.println("Indique a data de inicio: ano");
+       ano = ler.nextInt();
+       data_begin = new Date(ano,mes,dia); // Ver como transformar para formato data
+       
+       System.out.println("Indique a data do fim: dia");//meter na mesma maneira como le
+       dia = ler.nextInt();
+       System.out.println("Indique a data do fim: mes");
+       mes = ler.nextInt();
+       System.out.println("Indique a data do fim: ano");
+       ano = ler.nextInt();
+       data_end = new Date(ano,mes,dia);
+       
+       System.out.println("Indique um contribuinte individual:");
+       contribindiv=ler.nextInt();
+       
+       String lista_fat_data = b.listaFacturasCIndividuais(data_end,data_begin,
+       contribindiv,contrib);
+       System.out.println(lista_fat_data);
+        }
+       if(i==6){
        System.out.println("Indique a data de inicio: dia");//meter na mesma maneira como le
        dia = ler.nextInt();
        System.out.println("Indique a data de inicio: mes");

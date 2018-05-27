@@ -233,7 +233,8 @@ public String getTotalFacturado(int newNif,Date end, Date begin){
     double totalFacturado = 0.0;
     CEmpresas c = contribuintesE.get(newNif);
     ArrayList<Factura> f = new ArrayList<Factura>();
-    
+    System.out.println("coisas :" + c.faturas.get(0));
+   
     for(Factura f1 : c.getFaturas()){
         f.add(f1);
     }
