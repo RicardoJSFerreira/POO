@@ -229,8 +229,9 @@ public String empresasComMaisFaturas(int X){
     return escreve;
 }
 
-public String getTotalFacturado(CEmpresas c,Date end, Date begin){
+public String getTotalFacturado(int newNif,Date end, Date begin){
     double totalFacturado = 0.0;
+    CEmpresas c = contribuintesE.get(newNif);
     ArrayList<Factura> f = new ArrayList<Factura>();
     
     for(Factura f1 : c.getFaturas()){

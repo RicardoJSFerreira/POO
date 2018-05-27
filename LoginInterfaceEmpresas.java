@@ -54,7 +54,7 @@ public class LoginInterfaceEmpresas
        ano = ler.nextInt();
        data_end = new Date(ano,mes,dia);
        
-       String total_faturado =b.getTotalFacturado(contrib,data_end,data_begin); //nao dava para compilar
+       String total_faturado =b.getTotalFacturado(newNif,data_end,data_begin); //nao dava para compilar
        System.out.println(total_faturado);
        }
     }

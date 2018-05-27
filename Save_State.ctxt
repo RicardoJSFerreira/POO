@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Save_State
+comment0.text=\r\n\ Classe\ respons\u00E1vel\ pelo\ save\ e\ pelo\ load\ do\ estado\ do\ programa.\r\n
 comment1.params=l\ ID
 comment1.target=void\ WriteHashMap(java.util.HashMap,\ int)
 comment2.params=l\ ID
