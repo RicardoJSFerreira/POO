@@ -370,6 +370,9 @@ public static void main (String[] args) {
        Registo l = new Registo();
 
     }
+    if(c==4){
+        Administrador l = new Administrador ();
+    }
     else{
        saveState();
        System.exit(0);
