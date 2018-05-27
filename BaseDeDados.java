@@ -50,7 +50,7 @@ private static HashMap<Integer,CEmpresas> contribuintesE = new HashMap<Integer,C
  * @param new_ativEcon          Atividade económica
  */
 public void addContribuinteIndividual(int NIF, String Email, String nome, String morada, String password,
-int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
+int new_dependentes,ArrayList<Integer> new_NIFdependentes, int[] new_ativEcon){
     CIndividuais newCI = new CIndividuais();
     
     newCI = new CIndividuais(NIF,Email,nome,morada,password,new_dependentes
@@ -141,8 +141,8 @@ public String infoContribuinteI(CIndividuais c){
     }
     
     
-    for(int j=0; j<c.getNIFdepen().length; j++){
-        NIFDepen = c.getNIFdepen()[j];
+    for(int j=0; j<c.getNIFdepen().size(); j++){
+        NIFDepen = c.getNIFdepen().get(j);
         ci = getCIndividual(NIFDepen);
         deduzido+=ci.getdeduzido();
     }

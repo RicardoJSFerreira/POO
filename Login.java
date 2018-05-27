@@ -28,10 +28,7 @@ public class Login
          
        }
       
-      else{
-           b.main(yo);
-           
-        }
+       b.main(yo);
     }
     
     

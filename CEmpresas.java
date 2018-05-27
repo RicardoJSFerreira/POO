@@ -6,12 +6,12 @@ import java.util.ArrayList;
  */
 public class CEmpresas extends Contribuintes implements Serializable
 {
+    private static final long serialVersionUID = 1113799434508676095L;
     private String[] ativEconomicas;
     private double deducoes;
     private Concelho concelho;
     private int n_faturas;
     private double faturado;
-    private List<Integer> IndivAdicionados;
 
     /**
      * COnstrutor para objetos da classe CEmpresas
@@ -22,7 +22,6 @@ public class CEmpresas extends Contribuintes implements Serializable
         this.deducoes=0.0;
         this.n_faturas = 0;
         this.faturado = 0.0;
-        this.IndivAdicionados = null;
     }
 
     public CEmpresas(int NIF, String Email, String nome, String morada, String password,
@@ -83,7 +82,6 @@ public class CEmpresas extends Contribuintes implements Serializable
         this.faturado += f.getDespesa();
         this.deducoes = f.getDespesa()*this.concelho.getDeducao();
         this.n_faturas++;
-        this.IndivAdicionados.add(c.getNIF());
     }
     
 }

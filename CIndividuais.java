@@ -6,8 +6,9 @@ import java.util.ArrayList;
  */
 public class CIndividuais extends Contribuintes implements Serializable
 {
+    private static final long serialVersionUID = 1113799434508676095L;
     private int dependentes;
-    private int[] NIFdependentes;
+    private ArrayList<Integer> NIFdependentes;
     private double coefFiscal;
     private int[] ativEconomicas;
     private double despesaTotal;
@@ -27,7 +28,7 @@ public class CIndividuais extends Contribuintes implements Serializable
     }
     
     public CIndividuais(int NIF, String Email, String nome, String morada, String password,
-    int new_dependentes,int[] new_NIFdependentes, int[] new_ativEcon){
+    int new_dependentes, ArrayList<Integer> new_NIFdependentes, int[] new_ativEcon){
         this.NIF=NIF;
         this.email=Email;
         this.nome=nome;
@@ -54,8 +55,13 @@ public class CIndividuais extends Contribuintes implements Serializable
         return this.dependentes;
     }
     
-    public int[] getNIFdepen(){
-        return this.NIFdependentes;
+    public ArrayList<Integer> getNIFdepen(){
+        
+        ArrayList<Integer>res= new ArrayList<>(NIFdependentes.size());
+        for(int x : NIFdependentes){
+            res.add(x);
+        }
+        return res;
     }
     
     public double getCoef(){
@@ -78,7 +84,7 @@ public class CIndividuais extends Contribuintes implements Serializable
         this.dependentes=dependentes;
     }
     
-    public void setNIFdepen (int[] NIFdependentes){
+    public void setNIFdepen (ArrayList<Integer> NIFdependentes){
         this.NIFdependentes=NIFdependentes;
     }
     

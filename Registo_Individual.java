@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Registo_Individual
 {
 
@@ -12,7 +13,7 @@ public class Registo_Individual
         String nifdependentes;
         String ativEconomicas;
         int new_dependentes;
-        int[] new_NIFdependentes=null;
+        ArrayList<Integer> new_NIFdependentes=new ArrayList<>();
         int[] new_ativEcon=null;
         
        BaseDeDados b = new BaseDeDados();
